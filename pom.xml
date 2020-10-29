@@ -16,6 +16,13 @@
         <version>2.3.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version><!--JDK版本1.8-->
+        <skipTests>true</skipTests> <!--mvn命令打包跳过test-->
+    </properties>
+
     <dependencies>
         <!-- spring boot -->
         <dependency>
@@ -35,32 +42,10 @@
     <!-- Spring Cloud -->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.5.0</version>
-                <scope>test</scope>
-            </dependency>
 
-            <dependency>
-                <groupId>io.github.openfeign</groupId>
-                <artifactId>feign-okhttp</artifactId>
-                <version>11.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>2.3.3.RELEASE</version>
-            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.3.2.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-tomcat</artifactId>
                 <version>2.3.2.RELEASE</version>
             </dependency>
 
@@ -73,5 +58,15 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.3.RELEASE</version><!--要通过maven进行打包操作 需要这个插件-->
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
