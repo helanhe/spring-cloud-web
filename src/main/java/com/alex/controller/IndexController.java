@@ -12,4 +12,9 @@ public class IndexController {
         return "this is IndexController";
     }
 
+    @GetMapping(value = "/index")
+    public String index2(){
+        return "jenkins SpringBoot Project Index Test";
+    }
+
 }
